@@ -6,7 +6,7 @@ setup(
     packages=find_packages(),
     entry_points={
         "console_scripts": [
-            "represent=src:cli",
+            "represent=src.__main__:cli",
         ],
     },
     install_requires=[
