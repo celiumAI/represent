@@ -11,7 +11,10 @@ setup(
     },
     install_requires=[
         "fire",
-        "uvicorn"
+        "uvicorn",
+        "langchain",
+        "llama-index",
+        "fastapi"
     ],
     author="Martin Christoph Frank",
     author_email="martinchristophfrank@gmail.com",

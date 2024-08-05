@@ -1,0 +1,6 @@
+[submodule "src/broker"]
+	path = src/broker
+	url = https://github.com/m-c-frank/broker
+[submodule "app"]
+	path = app
+	url = https://github.com/m-c-frank/webpresentations
