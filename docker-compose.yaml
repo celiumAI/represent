@@ -1,0 +1,15 @@
+services:
+  represent:
+    image: represent
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - HOST_LLM=host.docker.internal
+      - PORT_LLM=11434
+      - HOST_BROKER=localhost
+      - PORT_BROKER=5050
+      - HOST=0.0.0.0
+      - PORT=5000
+    ports:
+      - "5000:5000"

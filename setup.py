@@ -12,8 +12,8 @@ setup(
     install_requires=[
         "fire",
         "uvicorn",
-        "langchain",
-        "llama-index",
+        "pyyaml",
+        "httpx",
         "fastapi"
     ],
     author="Martin Christoph Frank",
