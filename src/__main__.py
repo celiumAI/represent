@@ -3,7 +3,7 @@ import fire
 from .broker.llm import llm
 from .broker.models import *
 from .broker.app import *
-from .broker.ingest import ingest_text_directory_without_embedding
+from .broker.ingest import ingest_repo_notes
 from .utils import setup_logging
 
 DEBUG = True
@@ -35,7 +35,7 @@ def represent_text(content, prompt):
 
 
 async def represent(path_input: str = PATH_INPUT,
-              name_prompt: str = DEFAULT_NAME_PROMPT):
+                    name_prompt: str = DEFAULT_NAME_PROMPT):
 
     log(msg="reading prompt file")
 
@@ -55,7 +55,7 @@ async def represent(path_input: str = PATH_INPUT,
 
     log(msg=f"processing all notes in {path_input}")
 
-    notes = ingest_text_directory_without_embedding(path_input)
+    notes = ingest_repo_notes(path_input)
 
     for note in notes:
         represented = represent_text(note.content, prompt)
@@ -79,7 +79,7 @@ async def represent(path_input: str = PATH_INPUT,
 
 
 def cli():
-    ## if -n is present run the ingest function first
+    # if -n is present run the ingest function first
     fire.Fire(represent)
 
 
